@@ -1,0 +1,56 @@
+@main {
+	<div class="page-header">
+	    <h2>Insert Timeline Card</h2>
+	</div>
+
+    <div class="row">
+        <div class="col-lg-6">
+            <form class="form-horizontal" role="form" id="commandForm">
+                <div class="form-group has-feedback">
+                    <input type="text" class="form-control input-lg col-lg-8" id="commandField"
+                    placeholder="Specify Command" data-command-url="@routes.Application.insertTimelineItem()" />
+                </div>
+            </form>
+        </div>
+
+        <div class="col-lg-6 pull-right">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Usage</h3>
+                </div>
+                <div class="panel-body">
+
+                    <p class="center"><kbd>&nbsp;&lt;TICKER&gt; &lt;INVESTMENT&gt; &lt;INVESTMENT QUANTIFIER&gt; &lt;TARGET&gt;&nbsp;</kbd></p>
+
+                    <dl class="dl-horizontal">
+                        <dt>TICKER</dt>
+                        <dd>
+                            Specify the desired ticker symbol to search for. E.g.: <kbd>IBM</kbd> or
+                            <kbd>TWTR</kbd>
+                        </dd>
+
+                        <dt>INVESTMENT</dt>
+                        <dd>
+                            Specify the the company investment to filter by. The following are the supported investment
+                            type: <kbd>EQY</kbd> (Equity), <kbd>DVD</kbd> (Dividend)
+                        </dd>
+
+                        <dt>INVESTMENT <br/>QUANTIFIER</dt>
+                        <dd>
+                            Specify the quantifier for the desired investment type. <br/>
+                            <em>For Equity:</em> <kbd>GIP</kbd>, <kbd>5d</kbd>, <kbd>1m</kbd>, <kbd>3m</kbd>,
+                            <kbd>6m</kbd>, <kbd>ytd</kbd>, <kbd>1y</kbd>, <kbd>2y</kbd>, <kbd>5y</kbd>, <kbd>my</kbd> <br/>
+                            <em>For Dividend:</em> <kbd>YLD</kbd> (Yield), <kbd>DPS</kbd> (Dividend per Share)
+
+                        </dd>
+                    </dl>
+                </div>
+                <div class="panel-footer small"><strong>Note:</strong> Not all investment quantifiers can be used with a specific
+                    investment class. If an invalid quantifier is specified, we will fallback on the default value.</div>
+            </div>
+
+        </div>
+
+    </div>
+
+}

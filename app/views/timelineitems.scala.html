@@ -1,0 +1,60 @@
+@(timelineItems: List[com.google.api.services.mirror.model.TimelineItem])
+
+
+@main {
+
+	<div class="page-header">
+		<h3>@Messages("title.recent.timelineitems")</h3>
+	</div>
+	
+	<div>
+        @if(timelineItems.isEmpty()) {
+            <div class="alert alert-info">
+                You currently do not have any timeline cards associated with this application. Would you like to
+                <strong><a href="@routes.Application.launch()">add one</a></strong>?
+            </div>
+        } else {
+            <p>@Messages("title.recent.timelineitems.below") </p>
+
+            <div class="col-md-6">
+            @for(timelineItem <- timelineItems) {
+                <table class="table table-bordered">
+                    <tr>
+                        <th>@Messages("table.columnheader.id")</th>
+                        <td>@timelineItem.getId()</td>
+                    </tr>
+                    <tr>
+                        <th>@Messages("table.columnheader.createdat")</th>
+                        <td>@timelineItem.getCreated()</td>
+                    </tr>
+                    <tr>
+                        <th>@Messages("table.columnheader.text")</th>
+                        <td>@timelineItem.getText()</td>
+                    </tr>
+                    <tr>
+                        <th>@Messages("table.columnheader.html")</th>
+                        <td>
+                        <div>
+                        @timelineItem.getHtml()
+
+                        </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <form class="form-inline" action="@routes.Application.deleteTimelineItem()" method="POST">
+                                <input type="hidden" name="itemId" value="@timelineItem.getId()">
+                                <button class="btn btn-block btn-danger" type="submit">@Messages("action.delete.timeline.item")</button>
+                            </form>
+                        </td>
+                    </tr>
+                </table>
+            }
+            </div>
+        }
+
+
+    </div>
+}
+
+

@@ -1,0 +1,16 @@
+.customize-download .btn-outline {
+    padding: 20px;
+    margin-bottom: 40px;
+}
+
+.launch-btn {
+	text-transform: uppercase;
+}
+
+.container {
+	padding-top: 30px;
+}
+
+dt, dd {
+	padding-top: 20px;
+}

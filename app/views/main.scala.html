@@ -1,0 +1,39 @@
+@(content: Html)
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>@Messages("app.name")</title>
+
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+        <link rel="stylesheet" href="@routes.WebJarAssets.at(WebJarAssets.locate("bootstrap.min.css"))">
+        <link rel="stylesheet"  href='@routes.Assets.at("stylesheets/main.css")'>
+        <link href='http://fonts.googleapis.com/css?family=Roboto:400,300italic,300' rel='stylesheet' type='text/css'>
+
+        <script src='@routes.WebJarAssets.at(WebJarAssets.locate("jquery.min.js"))' type="text/javascript"></script>
+        <script src='@routes.WebJarAssets.at(WebJarAssets.locate("bootstrap.min.js"))' type="text/javascript"></script>
+        <script src='@routes.Assets.at("javascripts/index.js")' type='text/javascript'></script>
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+			<div class="container-fluid">
+				<div class=="navbar-header">
+				    <a class="navbar-brand" href="/">@Messages("app.name")</a>
+				</div>
+				
+				<div class="collapse navbar-collapse">
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="@routes.Application.relogin()">Re-Login</a></li>
+					</ul>
+				</div>			
+
+			</div>
+        </nav>
+
+        <div class="container">
+            @content
+        </div>
+    </body>
+</html>
+

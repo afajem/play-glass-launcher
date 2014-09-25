@@ -1,0 +1,15 @@
+# Global
+app.name=Play Glass Launcher
+
+# Action Button Labels
+action.create.timeline.card=Create Timeline Card
+action.list.timeline.items=View Timeline Cards
+action.delete.timeline.item=Delete
+
+# Labels
+title.recent.timelineitems=Your Recent Timeline Items
+title.recent.timelineitems.below=The recent timeline items below are listed in reverse chronological order.
+table.columnheader.id=ID
+table.columnheader.createdate=Created at
+table.columnheader.text=Text
+table.columnheader.html=HTML
