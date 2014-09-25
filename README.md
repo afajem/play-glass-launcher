@@ -2,7 +2,10 @@
 
 ## Overview
 
-This project provides a simple demonstration of how to implement the Google Glass [Mirror API](https://developers.google.com/glass/develop/mirror/index) using Typesafe's [Play Framework](https://www.playframework.com). This application is loosely based on the Quick Start Java example provided in the Mirror API Guides located at [https://developers.google.com/glass/develop/mirror/quickstart/java](https://developers.google.com/glass/develop/mirror/quickstart/java). Instead of going the Java Servlet approach, this application uses Play to drive all HTTP requests into the application, routing the requests through OAuth2 authentication services and dedicate Controllers to the required endpoints.
+This project provides a simple demonstration of how to implement the Google Glass [Mirror API](https://developers.google.com/glass/develop/mirror/index) using Typesafe's [Play Framework](https://www.playframework.com). The web application allows an authenticated user (paired with a Google Glass) to deliver financial data such as stock charts and dividends data to a Google Glass timeline as static cards. It also allows a user to view Google Glass timeline cards that have been created on the device as well as remove them from the timeline. 
+
+This application is loosely based on the Quick Start Java example provided in the Mirror API Guides located at [https://developers.google.com/glass/develop/mirror/quickstart/java](https://developers.google.com/glass/develop/mirror/quickstart/java). Instead of going the Java Servlet approach, this application uses Play to drive all HTTP requests into the application, routing the requests through OAuth2 authentication services and dedicate Controllers to the required endpoints
+
 
 In addition to relying on the Play Framework, the application uses Google's OAuth2 authentication mechanism coupled with the Google Client API. The Quick Start example has been adapted to use the Play build and artificat management system (as opposed to Maven).
 
